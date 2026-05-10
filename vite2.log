@@ -1,0 +1,22 @@
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m314[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://10.100.102.3:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://172.19.176.1:[1m5173[22m/[39m
+[2m9:05:06 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx, /src/index.css[22m
+[2m9:05:07 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx, /src/index.css[22m
+[2m9:05:09 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/index.css, /src/components/SeoHead.jsx, /src/components/PageSeo.jsx[22m
+[2m9:06:32 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx, /src/index.css[22m
+[2m9:08:00 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx, /src/index.css[22m
+[2m9:12:58 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ContactForm.jsx, /src/index.css[22m
+[2m9:13:14 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx, /src/index.css[22m
+[2m9:15:43 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ContactForm.jsx, /src/index.css[22m
+[2m9:16:01 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx, /src/index.css[22m
+[2m9:16:11 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ContactForm.jsx, /src/index.css[22m
+[2m9:17:07 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ContactForm.jsx, /src/index.css[22m
+[2m9:17:09 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ContactForm.jsx, /src/index.css[22m
+[2m9:18:06 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ContactForm.jsx, /src/index.css[22m
+[2m9:18:12 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ContactForm.jsx, /src/index.css[22m
+[2m9:18:18 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ContactForm.jsx, /src/index.css[22m
+[2m9:18:26 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ContactForm.jsx, /src/index.css[22m
