@@ -29,31 +29,49 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3">
-      <input
-        required
-        type="text"
-        placeholder="שם מלא"
-        aria-label="שם מלא"
-        value={formData.name}
-        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-        className="flex-1 bg-white px-4 py-3.5 md:py-4 rounded-xl border border-[#002C3E]/10 outline-none focus:border-[#78BCC4] font-medium text-[#002C3E] transition-all text-sm md:text-base"
-      />
-      <input
-        required
-        type="tel"
-        placeholder="מספר טלפון"
-        aria-label="מספר טלפון"
-        dir="ltr"
-        value={formData.phone}
-        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-        className="flex-1 bg-white px-4 py-3.5 md:py-4 rounded-xl border border-[#002C3E]/10 outline-none focus:border-[#78BCC4] font-medium text-[#002C3E] text-right transition-all text-sm md:text-base"
-      />
+      <div className="flex-1 flex flex-col relative">
+        <label htmlFor="contact-name" className="sr-only">שם מלא</label>
+        <input
+          id="contact-name"
+          required
+          type="text"
+          placeholder="שם מלא"
+          aria-label="שם מלא"
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          className="w-full bg-white px-4 py-3.5 md:py-4 rounded-xl border border-[#002C3E]/10 outline-none focus:border-[#78BCC4] font-medium text-[#002C3E] transition-all text-sm md:text-base"
+        />
+      </div>
+      <div className="flex-1 flex flex-col relative">
+        <label htmlFor="contact-phone" className="sr-only">מספר טלפון</label>
+        <input
+          id="contact-phone"
+          required
+          type="tel"
+          placeholder="מספר טלפון"
+          aria-label="מספר טלפון"
+          dir="ltr"
+          value={formData.phone}
+          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+          className="w-full bg-white px-4 py-3.5 md:py-4 rounded-xl border border-[#002C3E]/10 outline-none focus:border-[#78BCC4] font-medium text-[#002C3E] text-right transition-all text-sm md:text-base"
+        />
+      </div>
       <button
         type="submit"
         disabled={isSubmitting}
-        className="bg-[#F7444E] hover:bg-[#de3d46] text-white px-6 py-3.5 md:py-4 rounded-xl font-bold text-sm md:text-base disabled:opacity-50 flex items-center justify-center shrink-0 transition-colors shadow-md coral-glow"
+        className="bg-[#F7444E] hover:bg-[#de3d46] text-white px-6 py-3.5 md:py-4 rounded-xl font-bold text-sm md:text-base disabled:opacity-50 flex items-center justify-center gap-2 shrink-0 transition-colors shadow-md coral-glow min-w-[100px]"
       >
-        {isSubmitting ? 'שולח...' : 'שליחה'}
+        {isSubmitting ? (
+          <>
+            <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span>שולח...</span>
+          </>
+        ) : (
+          'שליחה'
+        )}
       </button>
     </form>
   );

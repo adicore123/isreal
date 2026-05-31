@@ -1,0 +1,3 @@
+## 2024-05-18 - [Forms]
+**Learning:** Found an accessibility issue pattern in the app where inputs relied purely on `aria-label` or placeholders instead of `<label>` tags. Since visually hidden labels might have been skipped for design reasons, using `<label className="sr-only">` grouped together with the input field in a flex container is an optimal pattern for this app.
+**Action:** Always check forms for properly associated `<label>` tags. If visual design constraints prohibit visible labels, use `<label className="sr-only">` along with `id` and `htmlFor` to maintain screen reader accessibility without breaking the layout.
