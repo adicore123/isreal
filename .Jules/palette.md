@@ -1,0 +1,3 @@
+## 2024-05-14 - Inconsistent FAB Interaction Design
+**Learning:** Floating Action Buttons (FABs) across the app had inconsistent interaction designs. While the Accessibility menu button used `transition-transform duration-200 hover:scale-105` and proper `focus-visible:outline`, the WhatsApp and Phone FABs relied on plain `transition-colors` with no focus states or explicit `aria-label`s, breaking keyboard accessibility and consistency.
+**Action:** Always verify that icon-only FABs have a consistent interaction design system, including focus rings (`focus-visible:outline-4`), scale on hover (`hover:scale-105`), and `aria-label` with `aria-hidden="true"` on the internal SVG icons.
