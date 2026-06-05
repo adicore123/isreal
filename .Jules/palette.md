@@ -1,0 +1,5 @@
+## 2026-06-05 - Floating Action Buttons & Icon-only Accessibility
+
+**Learning:** Floating, icon-only interactive elements in this design system must explicitly handle keyboard focus states (using `focus-visible` classes) and hide decorative SVGs (`aria-hidden="true"`) to properly accommodate keyboard and screen reader users without redundant announcements. Floating buttons lacked explicit visual focus outlines which is a key issue for tab navigation, and toggles (like mobile menus) were missing their `aria-expanded` and `aria-controls` bindings.
+
+**Action:** Whenever adding or modifying icon-only buttons (especially floating or absolute-positioned ones), ensure they have explicit `aria-label`, inner SVGs are `aria-hidden`, and `focus-visible` classes are provided matching their background colors to ensure contrast on focus. For interactive toggle buttons like mobile menus, always wire them up with `aria-expanded` and `aria-controls` to the container ID.
