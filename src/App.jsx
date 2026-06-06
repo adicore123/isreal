@@ -160,23 +160,32 @@ export default function App() {
     <>
       <SeoHead />
 
+      <a
+        href="#site-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:right-4 focus:z-[9999] focus:bg-[#002C3E] focus:text-white focus:px-6 focus:py-3 focus:rounded-xl focus:font-bold focus:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#78BCC4]"
+      >
+        דילוג לתוכן המרכזי
+      </a>
+
       {/* --- כפתורים צפים (מחוץ ל־#site-content) --- */}
       <a
         href="https://wa.me/972501234567"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-5 left-5 z-[100] bg-[#06d6a0] text-white p-3.5 rounded-full shadow-lg flex items-center justify-center hover:bg-[#05b88a] transition-colors"
+        className="fixed bottom-5 left-5 z-[100] bg-[#06d6a0] text-white p-3.5 rounded-full shadow-lg flex items-center justify-center hover:bg-[#05b88a] transition-colors focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-[#06d6a0]"
         title="שלחו הודעת וואטסאפ"
+        aria-label="שלחו הודעת וואטסאפ"
       >
-        <Icons.WhatsApp className="w-7 h-7" />
+        <Icons.WhatsApp className="w-7 h-7" aria-hidden="true" />
       </a>
 
       <a
         href="tel:0501234567"
-        className="fixed bottom-5 right-5 z-[100] bg-[#F7444E] hover:bg-[#de3d46] text-white p-3.5 rounded-full shadow-lg coral-glow flex items-center justify-center transition-colors"
+        className="fixed bottom-5 right-5 z-[100] bg-[#F7444E] hover:bg-[#de3d46] text-white p-3.5 rounded-full shadow-lg coral-glow flex items-center justify-center transition-colors focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-[#F7444E]"
         title="חייגו עכשיו"
+        aria-label="חייגו עכשיו"
       >
-        <Icons.Phone className="w-6 h-6" />
+        <Icons.Phone className="w-6 h-6" aria-hidden="true" />
       </a>
 
       <AccessibilityMenu stackAboveWhatsApp />
@@ -271,7 +280,8 @@ export default function App() {
 
       <main
         id="site-content"
-        className="min-h-screen bg-white text-[#002C3E] font-sans selection:bg-[#78BCC4]/30 overflow-x-hidden"
+        tabIndex={-1}
+        className="min-h-screen bg-white text-[#002C3E] font-sans selection:bg-[#78BCC4]/30 overflow-x-hidden outline-none"
       >
       {/* --- Hero --- */}
       <section
