@@ -1,0 +1,3 @@
+## 2026-06-07 - Adding aria-labels to Floating Icon Buttons
+**Learning:** Icon-only floating action buttons for external links (e.g. WhatsApp, phone) might only rely on title attributes which aren't always fully announced or accessible. Screen reader support differs significantly across title and aria-labels.
+**Action:** When adding or auditing icon-only buttons, consistently apply descriptive aria-labels to the parent link/button and aria-hidden="true" to the child SVG/icon to ensure screen readers announce the action clearly without reading generic SVG descriptors. Also ensure focus-visible states exist for keyboard users.
