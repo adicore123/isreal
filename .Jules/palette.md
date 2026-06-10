@@ -1,0 +1,3 @@
+## 2026-06-10 - Custom Mobile Menus and Action Buttons Accessibility
+**Learning:** Icon-only floating action buttons and custom mobile menu toggles in Tailwind often lack explicit ARIA attributes (`aria-expanded`, `aria-controls`, `aria-hidden` on SVG) and keyboard focus styles (`focus-visible`), making them difficult to use for screen reader and keyboard users.
+**Action:** Always add `aria-expanded` and `aria-controls` to custom menu toggles, use `aria-label` for icon-only buttons with `aria-hidden="true"` on the inner SVG, and explicitly add `focus-visible:outline` classes to ensure interactive elements are discoverable and navigable via keyboard.
