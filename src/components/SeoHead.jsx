@@ -16,6 +16,7 @@ export default function SeoHead() {
   return (
     <Helmet prioritizeSeoTags htmlAttributes={{ lang: 'he', dir: 'rtl' }}>
       <title>{SEO_HOME_TITLE}</title>
+      <meta name="google-site-verification" content="m3un_XUO5-kp1WFZ-ptFB60XSnVlTwdAJ17-4PZQEJY" />
       <meta name="description" content={SEO_HOME_DESCRIPTION} />
       <meta name="keywords" content={SEO_KEYWORDS} />
       <link rel="canonical" href={canonical} />

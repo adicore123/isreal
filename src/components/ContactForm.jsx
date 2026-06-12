@@ -13,6 +13,12 @@ const ContactForm = () => {
     await new Promise((r) => setTimeout(r, 1200));
     setIsSubmitting(false);
     setIsSent(true);
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'generate_lead', {
+        event_category: 'Contact',
+        event_label: 'Contact Form Submission',
+      });
+    }
   };
 
   if (isSent) {
