@@ -1,0 +1,3 @@
+## 2024-11-20 - Adding dynamic success feedback to async form components
+**Learning:** For React single-page applications, users and screen readers often lack feedback during asynchronous states. The `ContactForm` in this project didn't disable inputs during submission (allowing edits while a request is in-flight) and relied purely on visual state.
+**Action:** When creating or updating form components, apply `disabled={isSubmitting}` to relevant input fields, use explicit loading indicators (spinners) rather than just changing the submit button text, and ensure the final success state is wrapped in an element with `aria-live="polite"` so screen readers proactively announce the form success without requiring a focus shift.
