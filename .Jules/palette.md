@@ -1,0 +1,3 @@
+## 2024-06-14 - Form Accessibility & UX
+**Learning:** Adding explicit focus rings on form inputs and standardizing loading states with `aria-busy` and spin animations drastically improves visual and screen reader feedback on critical conversion points (like `ContactForm`). Users relying on keyboard navigation need unmistakable focus styling.
+**Action:** Always add `focus:ring` alongside `focus:border` for interactive inputs, and use `aria-busy` on async submit buttons.
