@@ -23,9 +23,9 @@ const ContactForm = () => {
 
   if (isSent) {
     return (
-      <div className="py-4">
+      <div className="py-4" role="status" aria-live="polite">
         <div className="w-12 h-12 bg-[#F7444E] rounded-full flex items-center justify-center mx-auto mb-3 text-white shadow-md">
-          <Icons.Check className="w-6 h-6" />
+          <Icons.Check className="w-6 h-6" aria-hidden="true" />
         </div>
         <h3 className="text-lg font-bold text-[#002C3E] mb-1">פנייתך התקבלה!</h3>
         <p className="text-[#002C3E]/80 text-sm">אנו ניצור קשר בהקדם האפשרי.</p>
