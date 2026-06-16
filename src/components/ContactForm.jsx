@@ -23,9 +23,9 @@ const ContactForm = () => {
 
   if (isSent) {
     return (
-      <div className="py-4">
+      <div className="py-4" aria-live="polite">
         <div className="w-12 h-12 bg-[#F7444E] rounded-full flex items-center justify-center mx-auto mb-3 text-white shadow-md">
-          <Icons.Check className="w-6 h-6" />
+          <Icons.Check className="w-6 h-6" aria-hidden />
         </div>
         <h3 className="text-lg font-bold text-[#002C3E] mb-1">פנייתך התקבלה!</h3>
         <p className="text-[#002C3E]/80 text-sm">אנו ניצור קשר בהקדם האפשרי.</p>
@@ -57,9 +57,17 @@ const ContactForm = () => {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="bg-[#F7444E] hover:bg-[#de3d46] text-white px-6 py-3.5 md:py-4 rounded-xl font-bold text-sm md:text-base disabled:opacity-50 flex items-center justify-center shrink-0 transition-colors shadow-md coral-glow"
+        aria-busy={isSubmitting}
+        className="bg-[#F7444E] hover:bg-[#de3d46] text-white px-6 py-3.5 md:py-4 rounded-xl font-bold text-sm md:text-base disabled:opacity-50 flex items-center justify-center shrink-0 transition-colors shadow-md coral-glow gap-2"
       >
-        {isSubmitting ? 'שולח...' : 'שליחה'}
+        {isSubmitting ? (
+          <>
+            <Icons.Spinner className="w-5 h-5" aria-hidden="true" />
+            <span>שולח...</span>
+          </>
+        ) : (
+          'שליחה'
+        )}
       </button>
     </form>
   );
