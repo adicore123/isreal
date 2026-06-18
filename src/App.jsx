@@ -160,6 +160,13 @@ export default function App() {
     <>
       <SeoHead />
 
+      <a
+        href="#site-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-[9999] focus:top-4 focus:right-4 focus:bg-[#002C3E] focus:text-white focus:px-6 focus:py-3 focus:rounded-xl focus:font-bold focus:outline-none focus:ring-4 focus:ring-[#78BCC4] shadow-xl"
+      >
+        דילוג לתוכן המרכזי
+      </a>
+
       {/* --- כפתורים צפים (מחוץ ל־#site-content) --- */}
       <a
         href="https://wa.me/972501234567"
