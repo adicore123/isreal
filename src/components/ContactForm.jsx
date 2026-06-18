@@ -57,6 +57,7 @@ const ContactForm = () => {
       <button
         type="submit"
         disabled={isSubmitting}
+        aria-busy={isSubmitting}
         className="bg-[#F7444E] hover:bg-[#de3d46] text-white px-6 py-3.5 md:py-4 rounded-xl font-bold text-sm md:text-base disabled:opacity-50 flex items-center justify-center shrink-0 transition-colors shadow-md coral-glow"
       >
         {isSubmitting ? 'שולח...' : 'שליחה'}
