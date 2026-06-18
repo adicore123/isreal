@@ -158,6 +158,13 @@ export default function App() {
 
   return (
     <>
+      <a
+        href="#site-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-[9999] focus:bg-white focus:text-[#002C3E] focus:p-4 focus:font-bold focus:shadow-md focus:top-0 focus:left-0"
+      >
+        דלג לתוכן המרכזי
+      </a>
+
       <SeoHead />
 
       {/* --- כפתורים צפים (מחוץ ל־#site-content) --- */}
@@ -175,6 +182,7 @@ export default function App() {
         }}
         className="fixed bottom-5 left-5 z-[100] bg-[#06d6a0] text-white p-3.5 rounded-full shadow-lg flex items-center justify-center hover:bg-[#05b88a] transition-colors"
         title="שלחו הודעת וואטסאפ"
+        aria-label="שלחו הודעת וואטסאפ"
       >
         <Icons.WhatsApp className="w-7 h-7" />
       </a>
@@ -191,6 +199,7 @@ export default function App() {
         }}
         className="fixed bottom-5 right-5 z-[100] bg-[#F7444E] hover:bg-[#de3d46] text-white p-3.5 rounded-full shadow-lg coral-glow flex items-center justify-center transition-colors"
         title="חייגו עכשיו"
+        aria-label="חייגו עכשיו"
       >
         <Icons.Phone className="w-6 h-6" />
       </a>
@@ -238,6 +247,8 @@ export default function App() {
             className="lg:hidden p-2 rounded-xl text-[#002C3E] hover:bg-[#F7F8F3] transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="תפריט ניווט"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMobileMenuOpen ? (
               <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -253,6 +264,7 @@ export default function App() {
 
         {/* Mobile Menu */}
         <div
+          id="mobile-menu"
           className={`lg:hidden overflow-hidden transition-all duration-300 ${
             isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           }`}
@@ -287,7 +299,8 @@ export default function App() {
 
       <main
         id="site-content"
-        className="min-h-screen bg-white text-[#002C3E] font-sans selection:bg-[#78BCC4]/30 overflow-x-hidden"
+        tabIndex={-1}
+        className="min-h-screen bg-white text-[#002C3E] font-sans selection:bg-[#78BCC4]/30 overflow-x-hidden outline-none"
       >
       {/* --- Hero --- */}
       <section
