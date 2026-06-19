@@ -175,8 +175,9 @@ export default function App() {
         }}
         className="fixed bottom-5 left-5 z-[100] bg-[#06d6a0] text-white p-3.5 rounded-full shadow-lg flex items-center justify-center hover:bg-[#05b88a] transition-colors"
         title="שלחו הודעת וואטסאפ"
+        aria-label="שלחו הודעת וואטסאפ בוואטסאפ"
       >
-        <Icons.WhatsApp className="w-7 h-7" />
+        <Icons.WhatsApp className="w-7 h-7" aria-hidden="true" />
       </a>
 
       <a
@@ -191,8 +192,9 @@ export default function App() {
         }}
         className="fixed bottom-5 right-5 z-[100] bg-[#F7444E] hover:bg-[#de3d46] text-white p-3.5 rounded-full shadow-lg coral-glow flex items-center justify-center transition-colors"
         title="חייגו עכשיו"
+        aria-label="חייגו עכשיו לטלפון שלנו"
       >
-        <Icons.Phone className="w-6 h-6" />
+        <Icons.Phone className="w-6 h-6" aria-hidden="true" />
       </a>
 
       <AccessibilityMenu stackAboveWhatsApp />
