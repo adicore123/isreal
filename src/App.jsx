@@ -173,10 +173,11 @@ export default function App() {
             });
           }
         }}
-        className="fixed bottom-5 left-5 z-[100] bg-[#06d6a0] text-white p-3.5 rounded-full shadow-lg flex items-center justify-center hover:bg-[#05b88a] transition-colors"
+        className="fixed bottom-5 left-5 z-[100] bg-[#06d6a0] text-white p-3.5 rounded-full shadow-lg flex items-center justify-center hover:bg-[#05b88a] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#002C3E] focus-visible:ring-offset-2"
         title="שלחו הודעת וואטסאפ"
+        aria-label="שלחו הודעת וואטסאפ (נפתח בחלון חדש)"
       >
-        <Icons.WhatsApp className="w-7 h-7" />
+        <Icons.WhatsApp className="w-7 h-7" aria-hidden="true" />
       </a>
 
       <a
@@ -189,10 +190,11 @@ export default function App() {
             });
           }
         }}
-        className="fixed bottom-5 right-5 z-[100] bg-[#F7444E] hover:bg-[#de3d46] text-white p-3.5 rounded-full shadow-lg coral-glow flex items-center justify-center transition-colors"
+        className="fixed bottom-5 right-5 z-[100] bg-[#F7444E] hover:bg-[#de3d46] text-white p-3.5 rounded-full shadow-lg coral-glow flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#002C3E] focus-visible:ring-offset-2"
         title="חייגו עכשיו"
+        aria-label="חייגו עכשיו"
       >
-        <Icons.Phone className="w-6 h-6" />
+        <Icons.Phone className="w-6 h-6" aria-hidden="true" />
       </a>
 
       <AccessibilityMenu stackAboveWhatsApp />
@@ -235,9 +237,11 @@ export default function App() {
             הזמנת שירות
           </a>
           <button
-            className="lg:hidden p-2 rounded-xl text-[#002C3E] hover:bg-[#F7F8F3] transition-colors"
+            className="lg:hidden p-2 rounded-xl text-[#002C3E] hover:bg-[#F7F8F3] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#002C3E]"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="תפריט ניווט"
+            aria-label={isMobileMenuOpen ? "סגירת תפריט" : "פתיחת תפריט"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMobileMenuOpen ? (
               <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -253,6 +257,8 @@ export default function App() {
 
         {/* Mobile Menu */}
         <div
+          id="mobile-menu"
+          aria-hidden={!isMobileMenuOpen}
           className={`lg:hidden overflow-hidden transition-all duration-300 ${
             isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           }`}
@@ -268,16 +274,18 @@ export default function App() {
               <a
                 key={href}
                 href={href}
+                tabIndex={isMobileMenuOpen ? 0 : -1}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="py-3 px-4 rounded-xl font-semibold text-[#002C3E]/70 hover:text-[#002C3E] hover:bg-[#F7F8F3] transition-colors text-right"
+                className="py-3 px-4 rounded-xl font-semibold text-[#002C3E]/70 hover:text-[#002C3E] hover:bg-[#F7F8F3] transition-colors text-right focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#002C3E]"
               >
                 {label}
               </a>
             ))}
             <a
               href="#contact"
+              tabIndex={isMobileMenuOpen ? 0 : -1}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="mt-2 bg-[#002C3E] text-white px-6 py-3 rounded-xl font-bold text-center transition-all hover:bg-[#F7444E]"
+              className="mt-2 bg-[#002C3E] text-white px-6 py-3 rounded-xl font-bold text-center transition-all hover:bg-[#F7444E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F7444E] focus-visible:ring-offset-2"
             >
               הזמנת שירות
             </a>
