@@ -1,0 +1,3 @@
+## 2024-05-15 - Missing ARIA labels and state attributes on icon-only interactive elements
+**Learning:** Found that key interactive elements like floating action buttons (WhatsApp, Phone) and the mobile menu toggle lacked proper `aria-label`, `aria-expanded`, and `aria-controls` attributes, making them inaccessible to screen readers. Focus states for keyboard navigation were also missing or insufficient.
+**Action:** Always verify icon-only buttons have descriptive `aria-label`s, ensure expandable components like menus use `aria-expanded` and `aria-controls`, and verify `focus-visible` states are clearly visible for keyboard users.
