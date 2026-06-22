@@ -1,0 +1,3 @@
+## 2024-05-18 - ARIA Navigation Toggles and Focus
+**Learning:** For floating/fixed navigation elements (like floating action buttons and mobile menu toggles), omitting clear `aria-labels` and ARIA toggle states (`aria-expanded`/`aria-controls`) breaks screen reader usability. Additionally, keyboard accessibility depends on explicit `focus-visible` styling since fixed elements may not rely on standard document flow outlines.
+**Action:** Always pair mobile menu buttons with explicit `aria-expanded` and `aria-controls` linked to an `id` on the menu container. Implement `focus-visible:outline` on all floating action buttons to ensure clear visibility during keyboard navigation.
