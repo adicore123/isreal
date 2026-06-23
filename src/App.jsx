@@ -160,6 +160,13 @@ export default function App() {
     <>
       <SeoHead />
 
+      <a
+        href="#site-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-1/2 focus:-translate-x-1/2 focus:z-[9999] focus:bg-[#002C3E] focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:font-bold focus-visible:outline-4 focus-visible:outline-[#78BCC4]"
+      >
+        דילוג לתוכן המרכזי
+      </a>
+
       {/* --- כפתורים צפים (מחוץ ל־#site-content) --- */}
       <a
         href="https://wa.me/972501234567"
@@ -173,10 +180,11 @@ export default function App() {
             });
           }
         }}
-        className="fixed bottom-5 left-5 z-[100] bg-[#06d6a0] text-white p-3.5 rounded-full shadow-lg flex items-center justify-center hover:bg-[#05b88a] transition-colors"
+        className="fixed bottom-5 left-5 z-[100] bg-[#06d6a0] text-white p-3.5 rounded-full shadow-lg flex items-center justify-center hover:bg-[#05b88a] transition-colors focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-[#78BCC4]"
         title="שלחו הודעת וואטסאפ"
+        aria-label="שלחו הודעת וואטסאפ"
       >
-        <Icons.WhatsApp className="w-7 h-7" />
+        <Icons.WhatsApp className="w-7 h-7" aria-hidden="true" />
       </a>
 
       <a
@@ -189,10 +197,11 @@ export default function App() {
             });
           }
         }}
-        className="fixed bottom-5 right-5 z-[100] bg-[#F7444E] hover:bg-[#de3d46] text-white p-3.5 rounded-full shadow-lg coral-glow flex items-center justify-center transition-colors"
+        className="fixed bottom-5 right-5 z-[100] bg-[#F7444E] hover:bg-[#de3d46] text-white p-3.5 rounded-full shadow-lg coral-glow flex items-center justify-center transition-colors focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-[#78BCC4]"
         title="חייגו עכשיו"
+        aria-label="חייגו עכשיו"
       >
-        <Icons.Phone className="w-6 h-6" />
+        <Icons.Phone className="w-6 h-6" aria-hidden="true" />
       </a>
 
       <AccessibilityMenu stackAboveWhatsApp />
@@ -235,9 +244,10 @@ export default function App() {
             הזמנת שירות
           </a>
           <button
-            className="lg:hidden p-2 rounded-xl text-[#002C3E] hover:bg-[#F7F8F3] transition-colors"
+            className="lg:hidden p-2 rounded-xl text-[#002C3E] hover:bg-[#F7F8F3] transition-colors focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-[#78BCC4]"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="תפריט ניווט"
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? (
               <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
