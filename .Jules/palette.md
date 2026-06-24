@@ -1,0 +1,3 @@
+## 2023-10-25 - Dynamic ARIA labels on Mobile Menus
+**Learning:** For interactive UI elements like hamburger menus, a static `aria-label` like "Navigation Menu" provides insufficient context. Screen reader users benefit greatly from dynamically updating the `aria-label` (e.g. "Open navigation menu" vs. "Close navigation menu") paired with `aria-expanded` to clearly communicate the current state and action.
+**Action:** Always pair `aria-expanded` with an `id` using `aria-controls` on the target container, and update `aria-label` text dynamically based on boolean states for critical interactive toggles.
