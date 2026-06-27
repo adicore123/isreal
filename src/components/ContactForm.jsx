@@ -23,7 +23,7 @@ const ContactForm = () => {
 
   if (isSent) {
     return (
-      <div className="py-4">
+      <div className="py-4" role="status" aria-live="polite">
         <div className="w-12 h-12 bg-[#F7444E] rounded-full flex items-center justify-center mx-auto mb-3 text-white shadow-md">
           <Icons.Check className="w-6 h-6" />
         </div>
@@ -42,7 +42,7 @@ const ContactForm = () => {
         aria-label="שם מלא"
         value={formData.name}
         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-        className="flex-1 bg-white px-4 py-3.5 md:py-4 rounded-xl border border-[#002C3E]/10 outline-none focus:border-[#78BCC4] font-medium text-[#002C3E] transition-all text-sm md:text-base"
+        className="flex-1 bg-white px-4 py-3.5 md:py-4 rounded-xl border border-[#002C3E]/10 outline-none focus:border-[#78BCC4] focus-visible:ring-2 focus-visible:ring-[#78BCC4] font-medium text-[#002C3E] transition-all text-sm md:text-base"
       />
       <input
         required
@@ -52,12 +52,13 @@ const ContactForm = () => {
         dir="ltr"
         value={formData.phone}
         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-        className="flex-1 bg-white px-4 py-3.5 md:py-4 rounded-xl border border-[#002C3E]/10 outline-none focus:border-[#78BCC4] font-medium text-[#002C3E] text-right transition-all text-sm md:text-base"
+        className="flex-1 bg-white px-4 py-3.5 md:py-4 rounded-xl border border-[#002C3E]/10 outline-none focus:border-[#78BCC4] focus-visible:ring-2 focus-visible:ring-[#78BCC4] font-medium text-[#002C3E] text-right transition-all text-sm md:text-base"
       />
       <button
         type="submit"
         disabled={isSubmitting}
-        className="bg-[#F7444E] hover:bg-[#de3d46] text-white px-6 py-3.5 md:py-4 rounded-xl font-bold text-sm md:text-base disabled:opacity-50 flex items-center justify-center shrink-0 transition-colors shadow-md coral-glow"
+        aria-busy={isSubmitting}
+        className="bg-[#F7444E] hover:bg-[#de3d46] text-white px-6 py-3.5 md:py-4 rounded-xl font-bold text-sm md:text-base disabled:opacity-50 flex items-center justify-center shrink-0 transition-colors shadow-md coral-glow outline-none focus-visible:ring-2 focus-visible:ring-[#002C3E] focus-visible:ring-offset-2"
       >
         {isSubmitting ? 'שולח...' : 'שליחה'}
       </button>
