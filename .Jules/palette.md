@@ -1,0 +1,3 @@
+## 2024-05-20 - Adding Accessibility to Async Form Success State
+**Learning:** For async form submissions, visual loading states like a spinner are not enough for screen readers. Using `role="status"` and `aria-live="polite"` on the success message wrapper ensures the message is read to the user as soon as it mounts without interrupting their current task. Also, explicitly adding `disabled:cursor-not-allowed` and keyboard focus states like `focus-visible:ring-2` to buttons creates a cohesive and accessible experience.
+**Action:** When adding spinners or handling form submissions, always check if the success/error message wrapper has `role="status"` or `role="alert"`, and add explicit focus styles for keyboard users.
