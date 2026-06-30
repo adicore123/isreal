@@ -23,7 +23,7 @@ const ContactForm = () => {
 
   if (isSent) {
     return (
-      <div className="py-4">
+      <div className="py-4" role="status" aria-live="polite">
         <div className="w-12 h-12 bg-[#F7444E] rounded-full flex items-center justify-center mx-auto mb-3 text-white shadow-md">
           <Icons.Check className="w-6 h-6" />
         </div>
@@ -57,7 +57,7 @@ const ContactForm = () => {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="bg-[#F7444E] hover:bg-[#de3d46] text-white px-6 py-3.5 md:py-4 rounded-xl font-bold text-sm md:text-base disabled:opacity-50 flex items-center justify-center shrink-0 transition-colors shadow-md coral-glow"
+        className="bg-[#F7444E] hover:bg-[#de3d46] text-white px-6 py-3.5 md:py-4 rounded-xl font-bold text-sm md:text-base disabled:opacity-50 flex items-center justify-center shrink-0 transition-colors shadow-md coral-glow disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#F7444E] focus-visible:outline-none"
       >
         {isSubmitting ? 'שולח...' : 'שליחה'}
       </button>
