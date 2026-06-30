@@ -1,0 +1,3 @@
+## 2024-06-30 - Form Accessibility Improvements
+**Learning:** For async form submissions in this app, visual loading states and success messages need to be paired with explicit screen reader announcements. We also learned that explicit focus-visible and disabled:cursor-not-allowed classes should be explicitly added to buttons to enhance the user experience for users relying on keyboard navigation and provide clear visual feedback.
+**Action:** When creating async forms, always use `role="status"` and `aria-live="polite"` on success/error message wrappers. Make sure buttons receive `disabled:cursor-not-allowed` and appropriate `focus-visible` styling (e.g., `focus-visible:ring-2`).
