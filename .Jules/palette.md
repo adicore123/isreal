@@ -1,0 +1,1 @@
+## 2026-07-07 - Contact Form Async Accessibility\n**Learning:** The success state feedback relies only on visual clues (check icon). Screen readers might miss the message without proper live regions.\n**Action:** Add `role="status"` and `aria-live="polite"` to form success messages so screen reader users are notified when an async submission completes.
