@@ -1,0 +1,3 @@
+## 2026-07-08 - Accessible Async Form Submission States
+**Learning:** Found that this app relies heavily on conditionally rendering custom success feedback (like the checkmark component) upon async form submissions, but those conditionally rendered DOM nodes lacked live region announcements (`aria-live`, `role="status"`). Additionally, the submission states for buttons visually indicated a loading state via text (`שולח...`) but didn't broadcast it to screen readers (missing `aria-busy`).
+**Action:** Always add `role="status"` and `aria-live="polite"` to dynamically injected success/error wrappers, and pair visual disabled states with `aria-busy={true}` on the submit button so assistive technology is fully aware of the lifecycle of the form submission.
